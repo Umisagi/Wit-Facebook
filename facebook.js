@@ -24,8 +24,8 @@ const fbMessage = (recipientId, msg, cb) => {
       recipient: {
         id: recipientId,
       },
-     message:{
-    attachment:[{
+     message:[{
+    attachment:{
       type:"template",
       payload:{
        template_type:"button",
@@ -43,7 +43,9 @@ const fbMessage = (recipientId, msg, cb) => {
           }
         ]
       }
-    },{
+    }
+  },{
+    attachment:{
       type:"template",
       payload:{
        template_type:"button",
@@ -61,8 +63,8 @@ const fbMessage = (recipientId, msg, cb) => {
           }
         ]
       }
-    }]
-  },
+    }
+  }],
     },
   };
 
