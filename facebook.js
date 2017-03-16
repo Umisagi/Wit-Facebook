@@ -24,32 +24,7 @@ const fbMessage = (recipientId, msg, cb) => {
         id: recipientId,
       },
       message: {
-        attachment: {
-          type: "template",
-          payload: {
-            template_type: "generic",
-            elements:[
-              {
-                title: "Testing title",
-                image_url: "https://raw.githubusercontent.com/Umisagi/LBdup2/master/img/sev240.jpg",
-                subtitle: "Testing subtitle",
-                default_action: {
-                  type: "web_url",
-                  url: "https://www.google.com",
-                  messenger_extensions: true,
-                  webview_height_ratio: "tall",
-                  fallback_url: "https://www.google.com"
-          },
-          buttons:[
-            {
-              type:"web_url",
-              url:"https://www.facebook.com",
-              title:"View Website"
-            },{
-              type:"postback",
-              title:"Start Chatting",
-              payload:"DEVELOPER_DEFINED_PAYLOAD"
-        }
+        text: msg,
       },
     },
   };
