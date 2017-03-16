@@ -23,39 +23,37 @@ const fbMessage = (recipientId, msg, cb) => {
       recipient: {
         id: recipientId,
       },
-      message:{
-    attachment:{
-      type:"template",
-      payload:{
-        template_type:"generic",
-        elements:[
-           {
-            title:"Welcome to Peter\'s Hats",
-            image_url:"https://petersfancybrownhats.com/company_image.png",
-            subtitle:"We\'ve got the right hat for everyone.",
-            default_action: {
-              type: "web_url",
-              url: "https://peterssendreceiveapp.ngrok.io/view?item=103",
-              messenger_extensions: true,
-              webview_height_ratio: "tall",
-              fallback_url: "https://peterssendreceiveapp.ngrok.io/"
-            },
-            buttons:[
-              {
-                type:"web_url",
-                url:"https://petersfancybrownhats.com",
-                title:"View Website"
-              },{
-                type:"postback",
-                title:"Start Chatting",
-                payload:"DEVELOPER_DEFINED_PAYLOAD"
-              }              
-            ]      
+      message: {
+        attachment: {
+            type: "template",
+            payload: {
+                template_type: "generic",
+                elements: [{
+                    title: "First card",
+                    subtitle: "Element #1 of an hscroll",
+                    image_url: "http://messengerdemo.parseapp.com/img/rift.png",
+                    buttons: [{
+                        type: "web_url",
+                        url: "https://www.messenger.com",
+                        title: "web url"
+                    }, {
+                        type: "postback",
+                        title: "Postback",
+                        payload: "Payload for first element in a generic bubble",
+                    }],
+                }, {
+                    title: "Second card",
+                    subtitle: "Element #2 of an hscroll",
+                    image_url: "http://messengerdemo.parseapp.com/img/gearvr.png",
+                    buttons: [{
+                        type: "postback",
+                        title: "Postback",
+                        payload: "Payload for second element in a generic bubble",
+                    }],
+                }]
+            }
           }
-        ]
-      }
-    }
-  },
+        },
     },
   };
 
@@ -65,7 +63,6 @@ const fbMessage = (recipientId, msg, cb) => {
     }
   });
 };
-
 
 // See the Webhook reference
 // https://developers.facebook.com/docs/messenger-platform/webhook-reference
