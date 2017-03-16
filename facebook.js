@@ -23,39 +23,34 @@ const fbMessage = (recipientId, msg, cb) => {
       recipient: {
         id: recipientId,
       },
-     message:{
-    attachment:{
-      type:"template",
-      payload:{
-        template_type:"generic",
-        elements:[
-           {
-            title:"Welcome to Peter\'s Hats",
-            image_url:"https://scontent.xx.fbcdn.net/v/t34.0-0/p280x280/17351193_1291846260904007_325830308_n.jpg?oh=7bb361d4f7be4e537f5828b670f21306&oe=58CB5AF3",
-            subtitle:"We\'ve got the right hat for everyone.",
-            default_action: {
-              type: "web_url",
-              url: "https://scontent.xx.fbcdn.net/v/t34.0-0/p280x280/17351193_1291846260904007_325830308_n.jpg?oh=7bb361d4f7be4e537f5828b670f21306&oe=58CB5AF3",
-              messenger_extensions: true,
-              webview_height_ratio: "tall",
-              fallback_url: "https://peterssendreceiveapp.ngrok.io/"
-            },
-            buttons:[
+      message: {
+        attachment: {
+          type: "template",
+          payload: {
+            template_type: "generic",
+            elements:[
               {
-                type:"web_url",
-                url:"https://petersfancybrownhats.com",
-                title:"View Website"
-              },{
-                type:"postback",
-                title:"Start Chatting",
-                payload:"DEVELOPER_DEFINED_PAYLOAD"
-              }              
-            ]      
-          }
-        ]
-      }
-    }
-  },
+                title: "Testing title",
+                image_url: "https://raw.githubusercontent.com/Umisagi/LBdup2/master/img/sev240.jpg",
+                subtitle: "Testing subtitle",
+                default_action: {
+                  type: "web_url",
+                  url: "https://www.google.com",
+                  messenger_extensions: true,
+                  webview_height_ratio: "tall",
+                  fallback_url: "https://www.google.com"
+          },
+          buttons:[
+            {
+              type:"web_url",
+              url:"https://www.facebook.com",
+              title:"View Website"
+            },{
+              type:"postback",
+              title:"Start Chatting",
+              payload:"DEVELOPER_DEFINED_PAYLOAD"
+        }
+      },
     },
   };
 
